@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the formulae react sample app.
 
-Things you may want to cover:
+You should have a .envrc file in your application with the following variables:
 
-* Ruby version
+```sh
+export PORT=3002
+export REACT_APP_FORMULAE_API_BASE_URL=http://localhost:3000/api/v1
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`REACT_APP_FORMULAE_API_BASE_URL` is the place where the Formulae API is
+running, you can change it.
