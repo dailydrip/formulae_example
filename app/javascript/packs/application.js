@@ -14,6 +14,7 @@ import { RespondToForm, AdministerForm, Api, Stores } from "formulae_react";
 //import "./css/index.css";
 const { Form } = Api;
 const { RespondToFormStore, AdministerFormStore } = Stores;
+require("../../../node_modules/formulae_react/lib/css/index.css");
 
 // Just a thing to play with the form api
 // FIXME: Remove this eventually
