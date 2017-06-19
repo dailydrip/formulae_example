@@ -22,7 +22,7 @@ window.f = Form;
 document.onreadystatechange = function() {
   var state = document.readyState;
   if (state == "interactive") {
-    init();
+    // nothing to do here lol
   } else if (state == "complete") {
     // Example for RespondToForm
     ReactDOM.render(
