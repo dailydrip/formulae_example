@@ -10,30 +10,43 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { RespondToForm, Api, Stores } from "formulae_react";
+import { RespondToForm, Api, Stores, Types } from "formulae_react";
 const { Form } = Api;
-const { RespondToFormStore } = Stores;
+const { createRespondToFormStore } = Stores;
+const { Model } = Types;
 require("../../../node_modules/formulae_react/lib/css/index.css");
 
 // Just a thing to play with the form api
 // FIXME: Remove this eventually
 window.f = Form;
 
-document.onreadystatechange = function() {
-  var state = document.readyState;
-  if (state == "interactive") {
-    // nothing to do here lol
-  } else if (state == "complete") {
-    var adminElement = document.getElementById("respond-to-form");
-    if (adminElement) {
-      var formId = adminElement.getAttribute("data-form-id");
-      var formDisplay = adminElement.getAttribute("data-form-display");
-      ReactDOM.render(
-        <Provider store={RespondToFormStore}>
-          <RespondToForm displaySectionsAs={formDisplay} />
-        </Provider>,
-        adminElement
-      );
-    }
-  }
+window.loadRespondToForm = (element, formId, displaySectionsAs) => {
+  Form.get(formId).then(form => {
+    const store = createRespondToFormStore(new Model({ form: form }));
+    ReactDOM.render(
+      <Provider store={store}>
+        <RespondToForm displaySectionsAs={displaySectionsAs} />
+      </Provider>,
+      element
+    );
+  });
 };
+
+// document.onreadystatechange = function() {
+//   var state = document.readyState;
+//   if (state == "interactive") {
+//     // nothing to do here lol
+//   } else if (state == "complete") {
+//     var adminElement = document.getElementById("respond-to-form");
+//     if (adminElement) {
+//       var formId = adminElement.getAttribute("data-form-id");
+//       var formDisplay = adminElement.getAttribute("data-form-display");
+//       ReactDOM.render(
+//         <Provider store={RespondToFormStore}>
+//           <RespondToForm displaySectionsAs={formDisplay} />
+//         </Provider>,
+//         adminElement
+//       );
+//     }
+//   }
+// };
