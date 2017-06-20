@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FormulaeExample - View Form</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'respond_to_form' %>
+    <%= stylesheet_pack_tag 'respond_to_form' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
