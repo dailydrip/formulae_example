@@ -1,3 +1,4 @@
+// @flow
 /* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -14,6 +15,8 @@ import { RespondToForm, Api, Stores } from "formulae_react";
 const { Form } = Api;
 const { RespondToFormStore } = Stores;
 require("../../../node_modules/formulae_react/lib/css/index.css");
+import FormType from "../types/FormType";
+import { decodeForm } from "./decoders";
 
 // Just a thing to play with the form api
 // FIXME: Remove this eventually
@@ -26,11 +29,14 @@ document.onreadystatechange = function() {
   } else if (state == "complete") {
     var adminElement = document.getElementById("respond-to-form");
     if (adminElement) {
-      var formId = adminElement.getAttribute("data-form-id");
+      var form = JSON.parse(adminElement.getAttribute("data-form"));
       var formDisplay = adminElement.getAttribute("data-form-display");
+      debugger;
+      form = decodeForm(form);
+      debugger;
       ReactDOM.render(
         <Provider store={RespondToFormStore}>
-          <RespondToForm displaySectionsAs={formDisplay} />
+          <RespondToForm form={form} displaySectionsAs={formDisplay} />
         </Provider>,
         adminElement
       );
