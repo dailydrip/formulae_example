@@ -2,6 +2,9 @@
   "name": "formulae_example",
   "private": true,
   "dependencies": {
+    "immutable": "^3.8.1",
+    "eslint-plugin-flowtype": "2.21.0",
+    "flow-bin": "^0.44.2",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "babel-loader": "7.x",
