@@ -11,10 +11,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { RespondToForm, Api, Stores, Types } from "formulae_react";
+import { RespondToForm, Api, Stores, Types, Decoders } from "formulae_react";
 const { Form } = Api;
 const { RespondToFormStore } = Stores;
 const { FormType } = Types;
+const { decodeForm } = Decoders;
 require("../../../node_modules/formulae_react/lib/css/index.css");
 
 // Just a thing to play with the form api
@@ -28,13 +29,18 @@ document.onreadystatechange = function() {
   } else if (state == "complete") {
     var adminElement = document.getElementById("respond-to-form");
     if (adminElement) {
-      var formJSON = JSON.parse(adminElement.getAttribute("data-form"));
       var formDisplay = adminElement.getAttribute("data-form-display");
-      var form = new FormType(formJSON);
-      debugger;
+      var formId = adminElement.getAttribute("data-form-id");
+      var formJSON = JSON.parse(adminElement.getAttribute("data-form"));
+      var form = decodeForm(formJSON);
+
       ReactDOM.render(
         <Provider store={RespondToFormStore}>
-          <RespondToForm form={form} displaySectionsAs={formDisplay} />
+          <RespondToForm
+            formId={formId}
+            form={form}
+            displaySectionsAs={formDisplay}
+          />
         </Provider>,
         adminElement
       );
