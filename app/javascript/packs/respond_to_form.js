@@ -10,9 +10,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { AdministerForm, Api, Stores } from "formulae_react";
+import { RespondToForm, Api, Stores } from "formulae_react";
 const { Form } = Api;
-const { AdministerFormStore } = Stores;
+const { RespondToFormStore } = Stores;
 require("../../../node_modules/formulae_react/lib/css/index.css");
 
 // Just a thing to play with the form api
@@ -24,12 +24,13 @@ document.onreadystatechange = function() {
   if (state == "interactive") {
     // nothing to do here lol
   } else if (state == "complete") {
-    var adminElement = document.getElementById("administer-form");
+    var adminElement = document.getElementById("respond-to-form");
     if (adminElement) {
       var formId = adminElement.getAttribute("data-form-id");
+      var formDisplay = adminElement.getAttribute("data-form-display");
       ReactDOM.render(
-        <Provider store={AdministerFormStore}>
-          <AdministerForm formId={formId} />
+        <Provider store={RespondToFormStore}>
+          <RespondToForm displaySectionsAs={formDisplay} />
         </Provider>,
         adminElement
       );
