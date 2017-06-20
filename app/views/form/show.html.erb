@@ -1,2 +1,6 @@
-<div id="respond-to-form" data-form-id="<%= @form_id %>" data-form-display="<%= @form_display %>">
-</div>
+<div id="respond-to-form"></div>
+
+<script>
+  var el = document.getElementById("respond-to-form");
+  loadRespondToForm(el, <%= @form_id %>, "<%= @form_display %>");
+</script>
