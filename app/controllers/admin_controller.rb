@@ -2,6 +2,6 @@ class AdminController < ApplicationController
   layout 'admin'
 
   def edit
-    @form_id = 1
+    @form_id = params[:id]
   end
 end

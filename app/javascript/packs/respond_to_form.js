@@ -31,22 +31,3 @@ window.loadRespondToForm = (element, formId, displaySectionsAs) => {
     );
   });
 };
-
-// document.onreadystatechange = function() {
-//   var state = document.readyState;
-//   if (state == "interactive") {
-//     // nothing to do here lol
-//   } else if (state == "complete") {
-//     var adminElement = document.getElementById("respond-to-form");
-//     if (adminElement) {
-//       var formId = adminElement.getAttribute("data-form-id");
-//       var formDisplay = adminElement.getAttribute("data-form-display");
-//       ReactDOM.render(
-//         <Provider store={RespondToFormStore}>
-//           <RespondToForm displaySectionsAs={formDisplay} />
-//         </Provider>,
-//         adminElement
-//       );
-//     }
-//   }
-// };
