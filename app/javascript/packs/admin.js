@@ -10,29 +10,44 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { AdministerForm, Api, Stores } from "formulae_react";
+import { AdministerForm, Api, Stores, Types } from "formulae_react";
 const { Form } = Api;
-const { AdministerFormStore } = Stores;
+const { createAdministerFormStore } = Stores;
+const { AdministerFormModel } = Types;
 require("../../../node_modules/formulae_react/lib/css/index.css");
 
 // Just a thing to play with the form api
 // FIXME: Remove this eventually
 window.f = Form;
 
-document.onreadystatechange = function() {
-  var state = document.readyState;
-  if (state == "interactive") {
-    // nothing to do here lol
-  } else if (state == "complete") {
-    var adminElement = document.getElementById("administer-form");
-    if (adminElement) {
-      var formId = adminElement.getAttribute("data-form-id");
-      ReactDOM.render(
-        <Provider store={AdministerFormStore}>
-          <AdministerForm formId={formId} />
-        </Provider>,
-        adminElement
-      );
-    }
-  }
+window.loadAdministerForm = (element, formId) => {
+  Form.get(formId).then(form => {
+    const store = createAdministerFormStore(
+      new AdministerFormModel({ form: form })
+    );
+    ReactDOM.render(
+      <Provider store={store}>
+        <AdministerForm />
+      </Provider>,
+      element
+    );
+  });
 };
+
+//document.onreadystatechange = function() {
+//  var state = document.readyState;
+//  if (state == "interactive") {
+//    // nothing to do here lol
+//  } else if (state == "complete") {
+//    var adminElement = document.getElementById("administer-form");
+//    if (adminElement) {
+//      var formId = adminElement.getAttribute("data-form-id");
+//      ReactDOM.render(
+//        <Provider store={AdministerFormStore}>
+//          <AdministerForm formId={formId} />
+//        </Provider>,
+//        adminElement
+//      );
+//    }
+//  }
+//};

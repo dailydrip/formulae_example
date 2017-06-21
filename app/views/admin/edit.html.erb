@@ -1,2 +1,7 @@
-<div id="administer-form" data-form-id="<%= @form_id %>">
+<div id="administer-form">
 </div>
+
+<script>
+  var el = document.getElementById("administer-form");
+  loadAdministerForm(el, <%= @form_id %>);
+</script>
