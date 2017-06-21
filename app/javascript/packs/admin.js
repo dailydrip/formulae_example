@@ -33,21 +33,3 @@ window.loadAdministerForm = (element, formId) => {
     );
   });
 };
-
-//document.onreadystatechange = function() {
-//  var state = document.readyState;
-//  if (state == "interactive") {
-//    // nothing to do here lol
-//  } else if (state == "complete") {
-//    var adminElement = document.getElementById("administer-form");
-//    if (adminElement) {
-//      var formId = adminElement.getAttribute("data-form-id");
-//      ReactDOM.render(
-//        <Provider store={AdministerFormStore}>
-//          <AdministerForm formId={formId} />
-//        </Provider>,
-//        adminElement
-//      );
-//    }
-//  }
-//};

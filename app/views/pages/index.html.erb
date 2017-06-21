@@ -1,4 +1,46 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
-<div id="respond-to-form"></div>
-<div id="administer-form"></div>
+<div class="header">
+  <h1>Formulae Example</h1>
+  <h2>A complex Form react based </h2>
+</div>
+
+<div class="content">
+  <h2 class="content-subhead">How to use Formulae in your Rails app</h2>
+
+  <h3> Add the Formulae Ruby gem </h3>
+  <p>
+    Add in your Gemfile the `formulae_ruby` gem.
+  </p>
+
+  <h3> Set up webpack</h3>
+  <p>
+    We suggest using <a href="https://github.com/rails/webpacker">Webpacker</a> with your Rails App.
+
+    Once you have set up webpack. In development, you'll need to run <b>./bin/webpack-dev-server</b> in a separate terminal from <b>./bin/rails</b> server to have your <b>app/javascript/packs/*.js</b> files compiled as you make changes.
+  </p>
+
+  <p>
+    <a href="https://github.com/dailydrip/formulae_example/blob/master/app/javascript/packs/respond_to_form.js" target="_blank">You can check how we are integrating the components in this example app.</a>
+  </p>
+
+  <h3> Embed the component </h3>
+  <p>
+    Now you have imported the components, you can embed the component in your rails code.
+    To work better with Formulae, we suggest adding in your Gemfile the `formulae_ruby` gem.
+
+    To embed the component, we are using a javascript function where we pass the correct variables for each component.
+  </p>
+
+    <form class="pure-form">
+      <fieldset class="pure-group">
+        <textarea class="pure-input-1" rows="7">
+          <div id="administer-form">
+          </div>
+
+          <script>
+            var el = document.getElementById("administer-form");
+loadAdministerForm(el, <%= @form_id %>);
+          </script>
+        </textarea>
+      </fieldset>
+    </form>
+</div>
