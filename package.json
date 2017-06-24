@@ -39,8 +39,5 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^2.4.5"
-  },
-  "scripts": {
-    "start": "echo lol"
   }
 }
