@@ -10,7 +10,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { AdministerForm, Api, Stores, Types } from "formulae_react";
+import { AdministerForm, Api, Stores, Types } from "@dailydrip/formulae_react";
 const { Form } = Api;
 const { createAdministerFormStore } = Stores;
 const { AdministerFormModel } = Types;

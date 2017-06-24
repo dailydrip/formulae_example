@@ -10,7 +10,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { RespondToForm, AdministerForm, Api, Stores } from "formulae_react";
+import {
+  RespondToForm,
+  AdministerForm,
+  Api,
+  Stores
+} from "@dailydrip/formulae_react";
 //import "./css/index.css";
 const { Form } = Api;
 const { RespondToFormStore, AdministerFormStore } = Stores;
