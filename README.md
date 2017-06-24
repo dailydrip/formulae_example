@@ -2,7 +2,7 @@
 
 This is the formulae react sample app.
 
-You should have a .envrc file in your application with the following variables:
+You should have an `.envrc` file in your application with the following variables:
 
 ```sh
 export PORT=3002
