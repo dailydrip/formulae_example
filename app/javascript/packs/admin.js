@@ -14,7 +14,7 @@ import { AdministerForm, Api, Stores, Types } from "@dailydrip/formulae_react";
 const { Form } = Api;
 const { createAdministerFormStore } = Stores;
 const { AdministerFormModel } = Types;
-require("../../../node_modules/formulae_react/lib/css/index.css");
+require("../../../node_modules/@dailydrip/formulae_react/lib/css/index.css");
 
 // Just a thing to play with the form api
 // FIXME: Remove this eventually
