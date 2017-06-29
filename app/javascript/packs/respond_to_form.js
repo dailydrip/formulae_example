@@ -22,7 +22,9 @@ window.f = Form;
 
 window.loadRespondToForm = (element, formId, displaySectionsAs) => {
   Form.get(formId).then(form => {
-    const store = createRespondToFormStore(new Model({ form: form }));
+    const store = createRespondToFormStore(
+      new Model({ form: form, apiKey: "API_KEY" })
+    );
     ReactDOM.render(
       <Provider store={store}>
         <RespondToForm displaySectionsAs={displaySectionsAs} />

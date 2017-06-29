@@ -23,7 +23,7 @@ window.f = Form;
 window.loadAdministerForm = (element, formId) => {
   Form.get(formId).then(form => {
     const store = createAdministerFormStore(
-      new AdministerFormModel({ form: form })
+      new AdministerFormModel({ form: form, apiKey: "API_KEY" })
     );
     ReactDOM.render(
       <Provider store={store}>
