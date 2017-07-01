@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@dailydrip/formulae_react@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@dailydrip/formulae_react/-/formulae_react-0.1.3.tgz#ff87fecfd560ff3ab533a6531e6b3416b1dd3aac"
+"@dailydrip/formulae_react@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@dailydrip/formulae_react/-/formulae_react-0.2.1.tgz#2f15ca627d2b11f711150d4faafd563c464eff09"
   dependencies:
     apisauce "^0.12.0"
     immutable "^3.8.1"
