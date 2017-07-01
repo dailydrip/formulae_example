@@ -11,17 +11,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { AdministerForm, Api, Stores, Types } from "@dailydrip/formulae_react";
-const { Form } = Api;
+const { createFormApi } = Api;
 const { createAdministerFormStore } = Stores;
 const { AdministerFormModel } = Types;
 require("../../../node_modules/@dailydrip/formulae_react/lib/css/index.css");
 
-// Just a thing to play with the form api
-// FIXME: Remove this eventually
-window.f = Form;
-
 window.loadAdministerForm = (element, formId) => {
-  Form.get(formId).then(form => {
+  createFormApi("API_KEY").get(formId).then(form => {
     const store = createAdministerFormStore(
       new AdministerFormModel({ form: form, apiKey: "API_KEY" })
     );
