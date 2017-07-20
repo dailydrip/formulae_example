@@ -17,6 +17,7 @@ const { Model } = Types;
 require("../../../node_modules/@dailydrip/formulae_react/lib/css/index.css");
 
 const apiKey = process.env.API_KEY;
+console.log("apiKey", apiKey);
 
 window.loadRespondToForm = (element, formId, displaySectionsAs) => {
   createFormApi(apiKey).get(formId).then(form => {
