@@ -2,7 +2,7 @@
   "name": "formulae_example",
   "private": true,
   "dependencies": {
-    "@dailydrip/formulae_react": "0.3.4",
+    "@dailydrip/formulae_react": "0.3.5",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "babel-loader": "7.x",
