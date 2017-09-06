@@ -16,10 +16,12 @@ const { createRespondToFormStore } = Stores;
 const { Model } = Types;
 require("../../../node_modules/@dailydrip/formulae_react/lib/css/index.css");
 
+const apiKey = process.env.API_KEY;
+
 window.loadRespondToForm = (element, formId, displaySectionsAs) => {
-  createFormApi("API_KEY").get(formId).then(form => {
+  createFormApi(apiKey).get(formId).then(form => {
     const store = createRespondToFormStore(
-      new Model({ form: form, apiKey: "API_KEY" })
+      new Model({ form: form, apiKey: apiKey })
     );
     ReactDOM.render(
       <Provider store={store}>

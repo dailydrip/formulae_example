@@ -16,10 +16,12 @@ const { createAdministerFormStore } = Stores;
 const { AdministerFormModel } = Types;
 require("../../../node_modules/@dailydrip/formulae_react/lib/css/index.css");
 
+const apiKey = process.env.API_KEY;
+
 window.loadAdministerForm = (element, formId) => {
-  createFormApi("API_KEY").get(formId).then(form => {
+  createFormApi(apiKey).get(formId).then(form => {
     const store = createAdministerFormStore(
-      new AdministerFormModel({ form: form, apiKey: "API_KEY" })
+      new AdministerFormModel({ form: form, apiKey: apiKey })
     );
     ReactDOM.render(
       <Provider store={store}>
