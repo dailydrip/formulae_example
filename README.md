@@ -11,3 +11,7 @@ export REACT_APP_FORMULAE_API_BASE_URL=http://localhost:3000/api/v1
 
 `REACT_APP_FORMULAE_API_BASE_URL` is the place where the Formulae API is
 running, you can change it.
+
+## License
+
+The Formulae Example Application is MIT Licensed.
